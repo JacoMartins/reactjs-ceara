@@ -21,6 +21,15 @@ export const Nav = () => {
             A comunidade
           </Link>
         </li>
+
+        <li>
+          <Link
+            href="/blog"
+            className="block rounded-md px-4 py-4 text-center text-slate-600"
+          >
+            Blog
+          </Link>
+        </li>
       </ul>
     </nav>
   );
