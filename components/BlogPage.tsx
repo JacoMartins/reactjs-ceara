@@ -4,7 +4,6 @@ import { Header } from "@/components/Header";
 import { HighlightedPostCard } from "./HighlightedPostCard";
 import { PostCard } from "./PostCard";
 import { Post as PostType } from "@/types/post";
-import Link from "next/link";
 
 type Props = {
   highlightPosts: PostType[];

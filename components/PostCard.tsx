@@ -36,10 +36,10 @@ export function PostCard({ post: { id, cover, category, title, description, auth
           <div className="flex flex-row">
             {
               authors?.map((author, index) => (
-                <a className="font-bold text-sm text-gray-700">
+                <span className="font-bold text-sm text-gray-700" key={author.id}>
                   {index !== 0 ? index === authors.length - 1 ? <>&nbsp;&&nbsp;</> : <>,&nbsp;</> : ''}
                   {author.name}
-                </a>
+                </span>
               ))
             }
           </div>

@@ -38,6 +38,7 @@ export function PostPage({ post: { category, title, description, cover, authors,
                               alt={''}
                               fill
                               className="object-cover"
+                              key={author.avatar.fileName}
                             />
                           )
                         }
@@ -50,10 +51,10 @@ export function PostPage({ post: { category, title, description, cover, authors,
                   <div className="flex flex-row">
                     {
                       authors?.map((author, index) => (
-                        <a className="font-bold text-base text-gray-700">
-                          {index !== 0 ? index === authors.length - 1 ? <>&nbsp;&&nbsp;</> : <>&nbsp;,&nbsp;</> : ''}
+                        <span className="font-bold text-base text-gray-700" key={author.id}>
+                          {index !== 0 ? index === authors.length - 1 ? <>&nbsp;&&nbsp;</> : <>,&nbsp;</> : ''}
                           {author.name}
-                        </a>
+                        </span>
                       ))
                     }
                   </div>
@@ -73,7 +74,7 @@ export function PostPage({ post: { category, title, description, cover, authors,
             </div>
 
             <div className="aspect-video w-auto h-auto bg-gray-200 rounded-lg overflow-hidden">
-              <img className="object-cover w-full h-full" src={cover?.url} alt="Blog Post Cover" />
+              {cover?.url && <Image className="object-cover w-full h-full" src={cover.url} alt="Blog Post Cover" />}
             </div>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start lg:gap-8 lg:gap-14">
