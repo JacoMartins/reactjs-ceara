@@ -51,7 +51,7 @@ export function PostPage({ post: { category, title, description, cover, authors,
                   <div className="flex flex-row">
                     {
                       authors?.map((author, index) => (
-                        <span className="font-bold text-base text-gray-700" key={author.id}>
+                        <span className="font-bold text-base text-gray-700" key={'span' + author.id + index}>
                           {index !== 0 ? index === authors.length - 1 ? <>&nbsp;&&nbsp;</> : <>,&nbsp;</> : ''}
                           {author.name}
                         </span>

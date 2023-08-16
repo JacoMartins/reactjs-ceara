@@ -36,7 +36,7 @@ export function PostCard({ post: { id, cover, category, title, description, auth
           <div className="flex flex-row">
             {
               authors?.map((author, index) => (
-                <span className="font-bold text-sm text-gray-700" key={author.id}>
+                <span className="font-bold text-sm text-gray-700" key={'span' + author.id + index}>
                   {index !== 0 ? index === authors.length - 1 ? <>&nbsp;&&nbsp;</> : <>,&nbsp;</> : ''}
                   {author.name}
                 </span>
@@ -50,7 +50,7 @@ export function PostCard({ post: { id, cover, category, title, description, auth
       <div className="flex flex-row gap-4">
         <Link href={postUrl}>
           <div className="aspect-square w-24 h-24 min-w-max bg-gray-200 rounded-lg overflow-hidden">
-            <img className="object-cover w-full h-full" src={cover?.url} alt="Blog Post Cover" />
+            {cover?.url && <Image className="object-cover w-full h-full" src={cover.url} alt="Blog Post Cover" />}
           </div>
         </Link>
 

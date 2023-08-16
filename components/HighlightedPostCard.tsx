@@ -16,7 +16,7 @@ export function HighlightedPostCard({ post: { id, cover, category, title, descri
     <div className="flex flex-col gap-4 pb-4 border-b border-gray-300 last:border-transparent ">
       <Link href={postUrl}>
         <div className="aspect-video w-auto h-auto bg-gray-200 rounded-lg overflow-hidden">
-          <img className="object-cover w-full h-full" src={cover?.url} alt="Blog Post Cover" />
+          {cover?.url && <Image className="object-cover w-full h-full" src={cover.url} alt="Blog Post Cover" />}
         </div>
       </Link>
 
@@ -54,10 +54,10 @@ export function HighlightedPostCard({ post: { id, cover, category, title, descri
             <div className="flex flex-row">
               {
                 authors?.map((author, index) => (
-                  <a className="font-bold text-sm text-gray-700">
+                  <span className="font-bold text-sm text-gray-700" key={'span' + author.id + index}>
                     {index !== 0 ? index === authors.length - 1 ? <>&nbsp;&&nbsp;</> : <>&nbsp;,&nbsp;</> : ''}
                     {author.name}
-                  </a>
+                  </span>
                 ))
               }
             </div>
